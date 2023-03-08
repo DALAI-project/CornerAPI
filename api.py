@@ -11,7 +11,7 @@ import syslog
 syslog.openlog(ident="Corner-API", logoption=syslog.LOG_PID, facility=syslog.LOG_LOCAL0)
 
 # Path to pretrained model file
-MODEL_PATH = './model/corner_model_19122022.onnx'
+MODEL_PATH = './model/corner_model.onnx'
 # Input image size
 IMG_SIZE = 224
 
