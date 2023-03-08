@@ -22,6 +22,9 @@ Finnish National Archives.
 The API code has been built using the FastAPI lirary (https://fastapi.tiangolo.com/). It can be run either in a virtual environment,
 or in a Docker container. Instructions for both options are given below. 
 
+The API uses the pretrained machine learning model file located in the `/model` folder. By default the file name should be `corner_model.onnx`.
+If you use a model with different name, you need to update the model name in the `MODEL_PATH` variable of the `api.py` file.
+
 ### Running the API in a virtual environment
 
 These instructions use a conda virtual environment, and as a precondition you should have Miniconda or Anaconda installed on your operating system. 
