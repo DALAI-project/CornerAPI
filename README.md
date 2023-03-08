@@ -8,8 +8,8 @@ between 0 and 1).
 ## Model training and testing 
 
 The neural network model used for the image classification task was built with the Pytorch library, and the model training
-was done by fine-tuning an existing Densenet neural network model (https://pytorch.org/vision/main/models/generated/torchvision.models.densenet121.html).
-The trained model file was transformed into the ONNX format (https://onnx.ai/) in order to speed up inference and to make the use of the model less dependent on specific frameworks and libraries. 
+was done by fine-tuning an existing [Densenet neural network model](https://pytorch.org/vision/main/models/generated/torchvision.models.densenet121.html).
+The trained model file was transformed into the [ONNX](https://onnx.ai/) format in order to speed up inference and to make the use of the model less dependent on specific frameworks and libraries. 
 
 The model has been trained using approximately 35 000 scanned document images, out of which 5000 images contained folded or 
 torn corners and edges. With a test set of 10 000 images (1000 containing folded or torn corners and edges), the model 
@@ -19,7 +19,7 @@ Finnish National Archives.
 
 ## Running the API
 
-The API code has been built using the FastAPI lirary (https://fastapi.tiangolo.com/). It can be run either in a virtual environment,
+The API code has been built using the [FastAPI](https://fastapi.tiangolo.com/). It can be run either in a virtual environment,
 or in a Docker container. Instructions for both options are given below. 
 
 The API uses the pretrained machine learning model file located in the `/model` folder. By default the file name should be `corner_model.onnx`.
@@ -28,7 +28,7 @@ If you use a model with different name, you need to update the model name in the
 ### Running the API in a virtual environment
 
 These instructions use a conda virtual environment, and as a precondition you should have Miniconda or Anaconda installed on your operating system. 
-More information on the installation can be found at https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html. 
+More information on the installation can be found [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html). 
 
 First create and activate conda environment using the following commands:
 
@@ -50,7 +50,7 @@ You can start the API running a single process (with Uvicorn server):
 
 `uvicorn api:app --host 0.0.0.0 --port 8080`
 
-You can also start the API with Gunicorn as the process manager (find more information at https://fastapi.tiangolo.com/deployment/server-workers/):
+You can also start the API with Gunicorn as the process manager (find more information [here](https://fastapi.tiangolo.com/deployment/server-workers/)):
 
 `gunicorn api:app --workers 2 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8080`
 
@@ -62,7 +62,7 @@ You can also start the API with Gunicorn as the process manager (find more infor
 
 ### Running the API using Docker
 
-As a precondition, you should have Docker Engine installed. More information on the installation can be found at https://docs.docker.com/engine/install/. 
+As a precondition, you should have Docker Engine installed. More information on the installation can be found [here](https://docs.docker.com/engine/install/). 
 
 Build Docker image using the Dockerfile included in the repository: 
 
@@ -101,7 +101,7 @@ The image path `/path/img.jpg` should be replaced with a path to the image that 
 ### Testing the API using Docker
 
 In the Docker version of the API, the use of the latter option for passing input to the API requires 
-you to use bind mount (https://docs.docker.com/storage/bind-mounts/) to mount the desired file or 
+you to use [bind mount](https://docs.docker.com/storage/bind-mounts/) to mount the desired file or 
 directory into the Docker container. For instance if your input images are located in a local folder 
 `/home/user/data` and you want to pass their filepaths to the containerized API, you can create and start the 
 container with the command 
