@@ -1,6 +1,6 @@
 # CornerAPI
 
-API running a machine learning model trained to detect folded or torn corners and edges from scanned document images. 
+API for a machine learning model trained to detect folded or torn corners and edges from scanned document images. 
 The user sends the API an input image (in .jpg, .png or .tiff format) of a scanned document, and the API returns a reply 
 containing the predicted classification ('ok' or 'folded_corner'), and the corresponding prediction confidence (a number
 between 0 and 1).   
