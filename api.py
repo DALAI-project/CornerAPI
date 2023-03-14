@@ -53,7 +53,7 @@ def predict(image):
     """
     # Get model from app state
     model = app.package["model"]
-    image = img_transforms(image).unsqueeze(0)
+    image = img_transforms(image.convert("RGB")).unsqueeze(0)
     # Transform tensor to numpy array
     img = image.detach().cpu().numpy()
     input = {model.get_inputs()[0].name: img}
