@@ -13,11 +13,17 @@ The neural network model used for the image classification task was built with t
 was done by fine-tuning an existing [Densenet neural network model](https://pytorch.org/vision/main/models/generated/torchvision.models.densenet121.html).
 The trained model file was transformed into the [ONNX](https://onnx.ai/) format in order to speed up inference and to make the use of the model less dependent on specific frameworks and libraries. 
 
-The model has been trained using approximately 35 000 scanned document images, out of which 5000 images contained folded or 
-torn corners and edges. With a test set of 10 000 images (1000 containing folded or torn corners and edges), the model 
-reaches a 97% detection accuracy for faulty images and a 98% detection accuracy for images not containing folded or torn 
-corners and edges. Both the training and test data consist mainly of document images from the 1970s onwards, digitized by the 
-Finnish National Archives.
+Class|Training samples|Validation samples|Test samples|Test accuracy
+-|-|-|-|-
+Folded corner|5203|650|650|99.08%
+No folded corner|38641|4829|4829|97.80%
+
+The model has been trained and tested using 57 798 scanned document images, out of which 6503 images contain folded or 
+torn corners and edges. With a test set of over 5 479 images, the model reaches over 97% detection accuracy for both classes. 
+
+The data used in model training and testing consists of documents produced by the Finnish public administration in the period 
+from 1970s till 2020s and digitized by the Finnish National Archives. The documents contain sensitive data, and therefore the 
+dataset can not be made publicly available.
 
 ## Running the API
 
