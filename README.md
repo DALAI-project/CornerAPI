@@ -15,8 +15,8 @@ The trained model file was transformed into the [ONNX](https://onnx.ai/) format 
 
 Class|Training samples|Validation samples|Test samples|Test accuracy
 -|-|-|-|-
-Folded corner|5203|650|650|99.08%
-No folded corner|38641|4829|4829|97.80%
+Folded corner|5203|650|650|98.20%
+No folded corner|38641|4829|4829|99.61%
 
 The model has been trained and tested using 57 798 scanned document images, out of which 6503 images contain folded or 
 torn corners and edges. With a test set of over 5 479 images, the model reaches over 97% detection accuracy for both classes. 
