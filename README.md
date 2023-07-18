@@ -88,6 +88,10 @@ If only the container port is specified, Docker will automatically select a free
 
 `sudo docker port corner_container`
 
+## Logging
+
+Logging events are saved into a file `api_log.log` in the same folder where the `api.py` file is located. Previous content of the log file is overwritten after each restart. More information on different logging options is available [here](https://docs.python.org/3/library/logging.html).
+
 ## Testing the API
 
 The API has two endpoints: `/corner` endpoint expects the input image to be included in the client's POST request, while  
