@@ -96,14 +96,14 @@ async def detect_corner(file: UploadFile = File(...)):
     return predictions
 
 @app.get("/cornerpath")
-async def read_item(url: str):
+async def read_item(path: str):
     try:
         # Loads the image from the path sent with the GET request
-        image = Image.open(url)
+        image = Image.open(path)
         image.draft('RGB', (IMG_SIZE, IMG_SIZE))
 
     except Exception as e:
-        logging.error('Failed to recognize file %s as an image. Error: %s' % (url, e))
+        logging.error('Failed to recognize file %s as an image. Error: %s' % (path, e))
         raise HTTPException(status_code=400, detail='Failed to load the input image file: %s' % e)
 
     # Get predicted class and confidence
