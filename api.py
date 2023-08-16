@@ -80,7 +80,7 @@ async def detect_corner(file: UploadFile = File(...)):
     try:
         # Loads the image sent with the POST request
         req_content = await file.read()
-        image = Image.open(io.BytesIO(req_content))
+        image = Image.open(io.BytesIO(req_content)).convert('RGB')
         image.draft('RGB', (IMG_SIZE, IMG_SIZE))
     except Exception as e:
         logging.error('Failed to load the input image file: %s' % e) 
@@ -99,7 +99,7 @@ async def detect_corner(file: UploadFile = File(...)):
 async def read_item(path: str):
     try:
         # Loads the image from the path sent with the GET request
-        image = Image.open(path)
+        image = Image.open(path).convert('RGB')
         image.draft('RGB', (IMG_SIZE, IMG_SIZE))
 
     except Exception as e:
