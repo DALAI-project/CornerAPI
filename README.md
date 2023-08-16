@@ -95,7 +95,7 @@ Logging events are saved into a file `api_log.log` in the same folder where the 
 ## Testing the API
 
 The API has two endpoints: `/corner` endpoint expects the input image to be included in the client's POST request, while  
-`/cornerurl` endpoint expects to receive the  filepath to the image as a query parameter.
+`/cornerpath` endpoint expects to receive the filepath to the image as a query parameter.
 
 ### Testing the API in a virtual environment
 
@@ -105,9 +105,9 @@ You can test the `/corner` endpoint of the API for example using curl:
 
 NB! Windows users might encounter following error `Invoke-WebRequest : A parameter cannot be found that matches parameter name 'F'.`. This can be bypassed by running a command `Remove-item alias:curl`.
 
-The second option is to send the url/path to the image file with the http request:
+The second option is to send the path to the image file with the http request:
 
-`curl http://127.0.0.1:8000/cornerurl?url=/path/img.jpg`
+`curl http://127.0.0.1:8000/cornerpath?path=/path/img.jpg`
 
 The host and port should be the same ones that were defined when starting the API.
 The image path `/path/img.jpg` should be replaced with a path to the image that is used as test input. 
@@ -128,7 +128,7 @@ directory into the Docker container. For instance if the input images are locate
 
 and then the image paths can be sent to the API with the http request:
 
-`curl http://127.0.0.1:8000/cornerurl?url=/data/img.jpg`
+`curl http://127.0.0.1:8000/cornerpath?path=/data/img.jpg`
 
 ### Output of the API
 
