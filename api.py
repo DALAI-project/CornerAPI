@@ -95,7 +95,7 @@ async def detect_corner(file: UploadFile = File(...)):
             
     return predictions
 
-@app.get("/cornerurl")
+@app.get("/cornerpath")
 async def read_item(url: str):
     try:
         # Loads the image from the path sent with the GET request
