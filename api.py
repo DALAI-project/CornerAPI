@@ -4,7 +4,9 @@ import onnxruntime
 import numpy as np
 import io
 from PIL import Image
+import uvicorn
 import logging
+import sys
 
 # For logging options see
 # https://docs.python.org/3/library/logging.html
@@ -73,7 +75,7 @@ def predict(image):
 
 
 # Endpoint for corner prediction
-@app.post("/corner/")
+@app.post("/corner")
 async def detect_corner(file: UploadFile = File(...)):
     try:
         # Loads the image sent with the POST request
@@ -93,7 +95,7 @@ async def detect_corner(file: UploadFile = File(...)):
             
     return predictions
 
-@app.get("/cornerurl/")
+@app.get("/cornerurl")
 async def read_item(url: str):
     try:
         # Loads the image from the path sent with the GET request
