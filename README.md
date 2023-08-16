@@ -58,7 +58,7 @@ More information on the installation can be found [here](https://docs.conda.io/p
 
 `uvicorn api:app --host 0.0.0.0 --port 8080`
 
-#### You can also start the API with Gunicorn as the process manager (find more information [here](https://fastapi.tiangolo.com/deployment/server-workers/)):
+#### You can also start the API with Gunicorn as the process manager (find more information [here](https://fastapi.tiangolo.com/deployment/server-workers/)) (NB! does not work on Windows):
 
 `gunicorn api:app --workers 2 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8080`
 
@@ -102,6 +102,8 @@ The API has two endpoints: `/corner` endpoint expects the input image to be incl
 You can test the `/corner` endpoint of the API for example using curl:
 
 `curl http://127.0.0.1:8000/corner -F file=@/path/img.jpg`
+
+NB! Windows users might encounter following error `Invoke-WebRequest : A parameter cannot be found that matches parameter name 'F'.`. This can be bypassed by running a command `Remove-item alias:curl`.
 
 The second option is to send the url/path to the image file with the http request:
 
