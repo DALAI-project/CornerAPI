@@ -15,11 +15,11 @@ The trained model file was transformed into the [ONNX](https://onnx.ai/) format 
 
 Class|Training samples|Validation samples|Test samples|Test accuracy
 -|-|-|-|-
-Folded corner|5203|650|650|98.20%
+Folded corner|5243|654|654|97.70%
 No folded corner|38641|4829|4829|99.61%
 
-The model has been trained and tested using 57 798 scanned document images, out of which 6503 images contain folded or 
-torn corners and edges. With a test set of over 5 479 images, the model reaches over 97% detection accuracy for both classes. 
+The model has been trained and tested using 54 850 scanned document images, out of which 6551 images contain folded or 
+torn corners and edges. With a test set of 5 483 images, the model reaches over 97% detection accuracy for both classes. 
 
 The data used in model training and testing consists of documents produced by the Finnish public administration in the period 
 from 1970s till 2020s and digitized by the Finnish National Archives. The documents contain sensitive data, and therefore the 
