@@ -119,7 +119,7 @@ for example using curl:
 
 `curl http://127.0.0.1:8000/corner -F file=@/path/img.jpg`
 
-Sending the url/path to the image file with the http request to the API requires 
+Sending the path to the image file with the http request to the API requires 
 the use of [bind mount](https://docs.docker.com/storage/bind-mounts/) to mount the desired file or 
 directory into the Docker container. For instance if the input images are located in a local folder 
 `/home/user/data`, the container can be created and started the using the command 
