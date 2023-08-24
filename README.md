@@ -1,6 +1,6 @@
 # CornerAPI
 
-<img src="https://user-images.githubusercontent.com/33789802/224291501-cdf3ecb9-68cb-4acc-8022-6a842df391a5.jpg"  width="60%" height="60%">
+<img src="image.jpg"  width="60%" height="60%">
 
 API for a machine learning model trained to detect folded or torn corners and edges from scanned document images. 
 The user sends the API an input image (in .jpg, .png or .tiff format) of a scanned document, and the API returns a reply 
